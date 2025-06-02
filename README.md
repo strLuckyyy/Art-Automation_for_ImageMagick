@@ -34,7 +34,7 @@ With this automation, I managed to reduce the time spent organizing and compress
 
 * **Python 3.x** installed and set up in the system PATH.
 * **ImageMagick** installed ([https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php)) and the `magick` command working in the terminal.
-* The `art.bat` file available (inside the `/scripts` folder).
+* The `art.bat` file available (inside this folder).
 
 ---
 
