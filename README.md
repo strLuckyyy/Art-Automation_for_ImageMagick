@@ -17,6 +17,7 @@ Um utilitário em Python para facilitar a organização de sprites em subpastas 
 ## Motivação 🤔
 Durante o desenvolvimento do jogo StarDusk, o qual estou trabalhando atualmente, tive problemas com a demanda x tempo para conclusão do projeto, pensando nisso eu decidi pesquisar alternativas mais "rápidas" para a criação das animações do jogo. Depois de procurar bastante, decidi usar o **Blender** para as animações, utilizando a técnica de cut-out, renderizando e fazendo as spritesheet com a ajuda do **ImageMagick**.
 Porém o processo de organização e compactação das animações após renderizar estavam custando muito tempo, disso surgiu a idea de automatizar tudo para dar mais folego no projeto.
+Com essa automação consegui diminuir o tempo gasto organizando e compactando as sprites e spritesheets de quase 4h médias para cerca 5 minutos.
 
 ---
 
