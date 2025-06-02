@@ -132,52 +132,55 @@ def organizar_e_zipar(pasta_zip, sprite_base=None, novo_nome=None):
 
 
 def exibir_ajuda():
-    print("""
-        [ ART - Automação de Organização de Sprites e Spritesheets para ImageMagick ]
+    print("""\n\n
+=========================================
+               MagickArt
+      Automatic SpriteSheet Builder 
+=========================================
 
-        Comandos disponíveis:
+Comandos disponíveis:
 
-        1- Separar e gerar spritesheets:
-        Uso:
-            > art <NomeSprite> <N> <Nome1> <Início1> <Fim1> <Nome2> <Início2> <Fim2> ...
-        Exemplo:
-            > art Player 3 Idle 1 20 Walk 21 60 Run 61 90
+1- Separar e gerar spritesheets:
+Uso:
+    > art <NomeSprite> <N> <Nome1> <Início1> <Fim1> <Nome2> <Início2> <Fim2> ...
+Exemplo:
+    > art Player 3 Idle 1 20 Walk 21 60 Run 61 90
 
-        O que faz:
-        - Separa os frames entre os intervalos dados e move para subpastas.
-        - Gera spritesheets dentro dessas subpastas usando o ImageMagick.
-        - Usa como nome final: SS_<NomeSprite>-<NomeDaPasta>.png
+O que faz:
+- Separa os frames entre os intervalos dados e move para subpastas.
+- Gera spritesheets dentro dessas subpastas usando o ImageMagick.
+- Usa como nome final: SS_<NomeSprite>-<NomeDaPasta>.png
 
-        ⚠️ IMPORTANTE:
-        - Certifique-se que o programa ImageMagick esteja instalado e acessível pelo terminal.
+⚠️ IMPORTANTE:
+- Certifique-se que o programa ImageMagick esteja instalado e acessível pelo terminal.
 
-        ------------------------------------------------------------
+------------------------------------------------------------
 
-        2- Organizar, mover a sprite base e zipar:
-        Uso:
-            > art -oaz <NomePastaZip> [SpriteBase] [NovoNomeSpriteBase]
-        Exemplos:
-            > art -oaz PlayerZip                                  # Apenas move os spritesheets para PlayerZip e zipa.
-            > art -oaz PlayerZip SpriteBase.png                   # Move a base como está.
-            > art -oaz PlayerZip SpriteBase.png NovoNomepSB.png   # Renomeia a base ao mover.
+2- Organizar, mover a sprite base e zipar:
+Uso:
+    > art -oaz <NomePastaZip> [SpriteBase] [NovoNomeSpriteBase]
+Exemplos:
+    > art -oaz PlayerZip                                  # Apenas move os spritesheets para PlayerZip e zipa.
+    > art -oaz PlayerZip SpriteBase.png                   # Move a base como está.
+    > art -oaz PlayerZip SpriteBase.png NovoNomepSB.png   # Renomeia a base ao mover.
 
-        O que faz:
-        - Cria uma pasta <NomePastaZip>.
-        - Move os arquivos SS_*.png das subpastas para lá.
-        - Move a sprite base (se fornecida), podendo renomear.
-        - Cria o arquivo zip <NomePastaZip>.zip com tudo.
-          
-        Sprite base é para caso precise de uma sprite base específica para o projeto, como uma imagem de referência ou template.
+O que faz:
+- Cria uma pasta <NomePastaZip>.
+- Move os arquivos SS_*.png das subpastas para lá.
+- Move a sprite base (se fornecida), podendo renomear.
+- Cria o arquivo zip <NomePastaZip>.zip com tudo.
+    
+Sprite base é para caso precise de uma sprite base específica para o projeto, como uma imagem de referência ou template.
 
-        ------------------------------------------------------------
+------------------------------------------------------------
 
-        3- Ajuda:
-        Uso:
-            > art -help
-            > art --help
+3- Ajuda:
+Uso:
+    > art -help
+    > art --help
 
-        ------------------------------------------------------------
-        """)
+------------------------------------------------------------
+""")
 
 
 def main():

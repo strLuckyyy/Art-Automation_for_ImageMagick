@@ -1,10 +1,10 @@
 @echo off
 setlocal ENABLEEXTENSIONS
-title Art Automation Setup
+title MagickArt - Automatic SpriteSheet Builder
 
 echo.
 echo =========================================
-echo Art Automation Setup
+echo                MagickArt
 echo =========================================
 echo.
 :: Pega o diretirio onde o .bat está localizado
@@ -59,7 +59,7 @@ if errorlevel 1 (
 echo [v] Dependencias verificadas.
 
 :: Executa o script Python com todos os argumentos recebidos
-python "%SCRIPT_PATH%" %*
+cmd /k python "%SCRIPT_PATH%" %*
 
 pause
 endlocal
