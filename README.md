@@ -21,8 +21,11 @@ A Python utility to make it easier to organize sprites into subfolders and gener
 ## Motivation 🤔
 
 While working on the game StarDusk, which I'm currently developing, I had some issues with time vs. workload. So I started looking for faster ways to make the game’s animations.
+
 After a lot of searching, I ended up using **Blender** for animations, with the cut-out technique, rendering everything and making the spritesheets with **ImageMagick**.
+
 But organizing and compressing everything after rendering was still taking a lot of time, so I had the idea to automate it all to help speed things up.
+
 With this automation, I managed to reduce the time spent organizing and compressing the sprites and spritesheets from an average of almost 4 hours to about 5 minutes.
 
 ---
