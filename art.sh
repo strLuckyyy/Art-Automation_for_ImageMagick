@@ -8,55 +8,55 @@ echo "       SpriteSheet  Auto-Organizer       "
 echo "========================================="
 echo
 
-# Obtém o diretório do script
+# Get the script directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "Localizando art.py..."
+echo "Searching for art.py..."
 echo
 
-# Caminho completo para art.py
+# Full path to art.py
 SCRIPT_PATH="$SCRIPT_DIR/art.py"
 
-# Verifica se art.py existe
+# Check if art.py exists
 if [ ! -f "$SCRIPT_PATH" ]; then
-    echo "[X] Arquivo art.py nao encontrado em:"
+    echo "[ERROR] art.py file not found at:"
     echo "    $SCRIPT_PATH"
-    echo "Execute esse script no diretorio correto ou mova o .sh para a pasta certa."
-    read -p "Pressione Enter para sair..."
+    echo "Run this script in the correct directory or move the .sh to the right folder."
+    read -p "Press Enter to exit..."
     exit 1
 else
-    echo "[v] art.py encontrado em:"
+    echo "[OK] art.py found at:"
     echo "    $SCRIPT_PATH"
 fi
 
 echo
-echo "Verificando dependencias..."
+echo "Checking dependencies..."
 echo
 
-# Verifica se python está disponível
+# Check if python is available
 if ! command -v python3 &>/dev/null; then
-    echo "[x] Python3 nao encontrado no PATH. Instale o Python 3 e configure o PATH."
-    read -p "Pressione Enter para sair..."
+    echo "[ERROR] Python3 not found in PATH. Install Python 3 and configure your PATH."
+    read -p "Press Enter to exit..."
     exit 1
 else
-    echo "[v] Python encontrado."
+    echo "[OK] Python found."
 fi
 
-# Verifica se ImageMagick (magick) está disponível
+# Check if ImageMagick (magick) is available
 if ! command -v magick &>/dev/null; then
-    echo "[x] ImageMagick (magick) nao encontrado no PATH."
-    read -p "Pressione Enter para sair..."
+    echo "[ERROR] ImageMagick (magick) not found in PATH."
+    read -p "Press Enter to exit..."
     exit 1
 else
-    echo "[v] ImageMagick encontrado."
+    echo "[OK] ImageMagick found."
 fi
 
 echo
-echo "[v] Dependencias verificadas."
+echo "[OK] Dependencies verified."
 echo
 
-# Executa o script Python com os argumentos recebidos
+# Run the Python script with passed arguments
 python3 "$SCRIPT_PATH" "$@"
 
-# Aguarda o usuário pressionar Enter antes de fechar (opcional)
-read -p "Pressione Enter para finalizar..."
+# Wait for user input before closing (optional)
+read -p "Press Enter to finish..."

@@ -7,58 +7,62 @@ echo =========================================
 echo                 MagickArt
 echo =========================================
 echo.
-:: Pega o diretirio onde o .bat está localizado
+
+:: Get the directory where the .bat file is located
 set "SCRIPT_DIR=%~dp0"
 
-echo Localizando art.py...
+echo Searching for art.py...
 echo.
 
-:: Remove a barra final
+:: Remove the trailing backslash if it exists
 if "%SCRIPT_DIR:~-1%"=="\" (
     set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
 )
 
-:: Define o caminho para o art.py
+:: Define the path to art.py
 set "SCRIPT_PATH=%SCRIPT_DIR%\art.py"
 
-:: Verifica se art.py existe
+:: Check if art.py exists
 if not exist "%SCRIPT_PATH%" (
-    echo [X] Arquivo art.py nao encontrado em:
+    echo [ERROR] art.py file not found at:
     echo    %SCRIPT_PATH%
-    echo Execute esse script no diretorio correto ou mova o .bat para a pasta certa.
+    echo Run this script in the correct directory or move the .bat file to the right folder.
     pause
     exit /b 1
 ) else (
-    echo [v] art.py encontrado em:
+    echo [OK] art.py found at:
     echo    %SCRIPT_PATH%
 )
 
-
-echo Verificando dependencias...
+echo.
+echo Checking dependencies...
 echo.
 
-:: Verifica se python esta no PATH
+:: Check if Python is in the PATH
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo [x] Python nao encontrado no PATH. Instale o Python 3 e configure o PATH.
+    echo [ERROR] Python not found in PATH. Install Python 3 and configure your PATH.
     pause
     exit /b 1
 ) else (
-    echo [v] Python encontrado.
+    echo [OK] Python found.
 )
 
+:: Check if ImageMagick (magick) is in the PATH
 where magick >nul 2>&1
 if errorlevel 1 (
-    echo magick nao encontrado no PATH.
+    echo [ERROR] ImageMagick (magick) not found in PATH.
     pause
     exit /b 1
 ) else (
-    echo [v] ImageMagick encontrado.
+    echo [OK] ImageMagick found.
 )
 
-echo [v] Dependencias verificadas.
+echo.
+echo [OK] All dependencies verified.
+echo.
 
-:: Executa o script Python com todos os argumentos recebidos
+:: Run the Python script with all passed arguments
 cmd /k python "%SCRIPT_PATH%" %*
 
 pause

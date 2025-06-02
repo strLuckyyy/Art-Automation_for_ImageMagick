@@ -1,78 +1,86 @@
+
 # MagickArt - SpriteSheet Auto-Organizer 🗃️
 
-## Objetivo 🎯
-Um utilitário em Python para facilitar a organização de sprites em subpastas e geraração de spritesheets otimizadas com o **ImageMagick** de forma automatizada. Foco para quem trabalha com animações 2D em jogos ou qualquer ferramenta visual que envolva muitos frames.
+## Goal 🎯
+
+A Python utility to make it easier to organize sprites into subfolders and generate optimized spritesheets using **ImageMagick**, all automated. Focused on people working with 2D animations for games or any visual tool that involves a lot of frames.
 
 ---
 
-## O que faz? 👀
-- Organiza frames em subpastas baseadas por nome e intervalo. Definidos por você.
-- Cria spritesheets otimizadas, buscando sempre uma proporção quadrada (ou próxima disso) pra melhor aproveitamento e legibilidade.
-- Agrupa e compacta os spritesheets com opção de incluir uma imagem base de referência caso queira.
-- Totalmente controlado via terminal.
-- Livre para qualquer alteração ou adaptação para casos específicos.
-- Compatível com **Windows** e **Linux**.
+## What does it do? 👀
 
----
-## Motivação 🤔
-Durante o desenvolvimento do jogo StarDusk, o qual estou trabalhando atualmente, tive problemas com a demanda x tempo para conclusão do projeto, pensando nisso eu decidi pesquisar alternativas mais "rápidas" para a criação das animações do jogo. Depois de procurar bastante, decidi usar o **Blender** para as animações, utilizando a técnica de cut-out, renderizando e fazendo as spritesheet com a ajuda do **ImageMagick**.
-Porém o processo de organização e compactação das animações após renderizar estavam custando muito tempo, disso surgiu a idea de automatizar tudo para dar mais folego no projeto.
+* Organizes frames into subfolders based on name and interval. All set by you.
+* Creates optimized spritesheets, always trying to keep a square (or near square) shape for better use and readability.
+* Groups and compresses the spritesheets, with an option to include a base reference image if needed.
+* Fully controlled via terminal.
+* Free to edit or adapt for specific use cases.
+* Works on **Windows** and **Linux**.
 
 ---
 
-## Requisitos 🛑:
-* **Python 3.x** instalado e configurado no PATH do sistema.
-* **ImageMagick** instalado ([https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php)) e o comando `magick` acessível no prompt.
-* O arquivo `art.bat` disponível (disponível na pasta `/scripts` do repositório).
+## Motivation 🤔
+
+While working on the game StarDusk, which I'm currently developing, I had some issues with time vs. workload. So I started looking for faster ways to make the game’s animations.
+After a lot of searching, I ended up using **Blender** for animations, with the cut-out technique, rendering everything and making the spritesheets with **ImageMagick**.
+But organizing and compressing everything after rendering was still taking a lot of time, so I had the idea to automate it all to help speed things up.
 
 ---
 
-## Instalação no Windows 🪟
-1. **Clone o repositório**
+## Requirements 🛑
+
+* **Python 3.x** installed and set up in the system PATH.
+* **ImageMagick** installed ([https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php)) and the `magick` command working in the terminal.
+* The `art.bat` file available (inside the `/scripts` folder).
+
+---
+
+## Installing on Windows 🪟
+
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/strLuckyyy/MagickArt-SpriteSheet_Auto-Organizer.git
 cd MagickArt-SpriteSheet_Auto-Organizer
 ```
 
-2. **Adicione a pasta clonada no PATH do Windows**
+2. **Add the cloned folder to the Windows PATH**
 
-* Pressione `Win + R`, digite `sysdm.cpl` e aperte Enter.
-* Vá na aba **Avançado** > **Variáveis de Ambiente**.
-* Em **Variáveis do sistema**, selecione `Path` e clique em **Editar**.
-* Clique em **Novo** e adicione o caminho da pasta (ex: `C:\Art`).
-* Confirme tudo.
+* Press `Win + R`, type `sysdm.cpl`, and press Enter.
+* Go to the **Advanced** tab > **Environment Variables**.
+* Under **System variables**, find `Path` and click **Edit**.
+* Click **New** and add the folder path (like `C:\Art`).
+* Confirm everything.
 
-3. **Reinicie o terminal ou o PowerShell para que a alteração no PATH tenha efeito.**
+3. **Restart your terminal or PowerShell** so the PATH update works.
 
 ---
 
-## Instalação no Linux 🐧
+## Installing on Linux 🐧
 
-1. **Clone o repositório**
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/strLuckyyy/MagickArt-SpriteSheet_Auto-Organizer.git
 cd MagickArt-SpriteSheet_Auto-Organizer
 ```
 
-2. **Dê permissão de execução ao script `art.sh`**
+2. **Give execute permission to the `art.sh` script**
 
 ```bash
 chmod +x scripts/art.sh
 ```
 
-3. **(Opcional) Adicione o script ao PATH**
+3. **(Optional) Add the script to your PATH**
 
-Para conseguir usar o comando `art` de qualquer lugar no terminal, você pode criar um link simbólico ou mover o script para uma pasta já incluída no PATH:
+To use `art` from anywhere, you can either create a symbolic link or move the script to a folder that’s already in your PATH:
 
-**Opção 1 – Link simbólico (recomendado):**
+**Option 1 – Symbolic link (recommended):**
 
 ```bash
 sudo ln -s $(pwd)/scripts/art.sh /usr/local/bin/art
 ```
 
-**Opção 2 – Mover para o `/usr/local/bin`:**
+**Option 2 – Move to `/usr/local/bin`:**
 
 ```bash
 sudo cp scripts/art.sh /usr/local/bin/art
@@ -80,14 +88,17 @@ sudo cp scripts/art.sh /usr/local/bin/art
 
 ---
 
-## Como Usar 🛠️
-Com a instalação feita, agora você pode rodar o comando `art` de qualquer pasta utilizando o terminal. Lembrando que você deve rodar o sistema na pasta que possui os frames/sprites para que ocorra tudo corretamente.
+## How to use 🛠️
 
-Para informações e comandos, digite:
+Once installed, you can run `art` from any folder using the terminal.
+Just make sure you’re in the folder where your frames/sprites are.
+
+For info and options, run:
+
 ```bash
 art
-OU
+OR
 art -help
 ```
----
 
+---
