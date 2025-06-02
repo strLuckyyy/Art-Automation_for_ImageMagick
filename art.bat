@@ -2,13 +2,23 @@
 setlocal ENABLEEXTENSIONS
 title Art Automation Setup
 
-:: Pega o diretório onde o .bat está localizado
+echo.
+echo =========================================
+echo Art Automation Setup
+echo =========================================
+echo.
+:: Pega o diretirio onde o .bat está localizado
 set "SCRIPT_DIR=%~dp0"
 
-:: Remove a barra final (opcional, só pra ficar bonito)
-if "%SCRIPT_DIR:~-1%"=="\" set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
+echo Localizando art.py...
+echo.
 
-:: Define o caminho para o art.py - aqui assumindo que está na mesma pasta do .bat
+:: Remove a barra final
+if "%SCRIPT_DIR:~-1%"=="\" (
+    set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
+)
+
+:: Define o caminho para o art.py
 set "SCRIPT_PATH=%SCRIPT_DIR%\art.py"
 
 :: Verifica se art.py existe
@@ -18,28 +28,38 @@ if not exist "%SCRIPT_PATH%" (
     echo Execute esse script no diretorio correto ou mova o .bat para a pasta certa.
     pause
     exit /b 1
+) else (
+    echo [v] art.py encontrado em:
+    echo    %SCRIPT_PATH%
 )
 
-:: Verifica se python está no PATH
-where python >nul 2>nul
+
+echo Verificando dependencias...
+echo.
+
+:: Verifica se python esta no PATH
+python --version >nul 2>&1
 if errorlevel 1 (
-    echo [X] Python nao encontrado no PATH. Instale o Python 3 e configure o PATH.
+    echo [x] Python nao encontrado no PATH. Instale o Python 3 e configure o PATH.
     pause
     exit /b 1
+) else (
+    echo [v] Python encontrado.
 )
 
-:: Verifica se ImageMagick está no PATH (comando magick)
-where magick >nul 2>nul
+where magick >nul 2>&1
 if errorlevel 1 (
-    echo [!] ImageMagick (comando magick) nao encontrado no PATH.
-    echo Verifique se o ImageMagick esta instalado.
+    echo magick nao encontrado no PATH.
+    pause
+    exit /b 1
+) else (
+    echo [v] ImageMagick encontrado.
 )
+
+echo [v] Dependencias verificadas.
 
 :: Executa o script Python com todos os argumentos recebidos
 python "%SCRIPT_PATH%" %*
 
-echo.
-echo [✓] Configuracao concluida com sucesso.
-echo Reinicie o terminal para aplicar alteracoes no PATH, se necessario.
-
 pause
+endlocal

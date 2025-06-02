@@ -137,7 +137,7 @@ def exibir_ajuda():
 
         Comandos disponíveis:
 
-        1) Separar e gerar spritesheets:
+        1- Separar e gerar spritesheets:
         Uso:
             > art <NomeSprite> <N> <Nome1> <Início1> <Fim1> <Nome2> <Início2> <Fim2> ...
         Exemplo:
@@ -153,7 +153,7 @@ def exibir_ajuda():
 
         ------------------------------------------------------------
 
-        2) Organizar, mover a sprite base e zipar:
+        2- Organizar, mover a sprite base e zipar:
         Uso:
             > art -oaz <NomePastaZip> [SpriteBase] [NovoNomeSpriteBase]
         Exemplos:
@@ -171,7 +171,7 @@ def exibir_ajuda():
 
         ------------------------------------------------------------
 
-        3) Ajuda:
+        3- Ajuda:
         Uso:
             > art -help
             > art --help
@@ -187,23 +187,36 @@ def main():
         exibir_ajuda()
         return
 
+    if args[0] == "-oaz":
+        if len(args) >= 2:
+            nome_zip = args[1]
+            sprite_base = args[2] if len(args) >= 3 else None
+            novo_nome = args[3] if len(args) >= 4 else None
+            organizar_e_zipar(nome_zip, sprite_base, novo_nome)
+        else:
+            print("[!] Uso incorreto do comando -oaz. Use -help para mais informações.")
+        return
+
     if not verificar_imagemagick():
         print("[!] Cancelando geração de spritesheets.")
         return
 
-    nome_sprite = args[0]
-    quantidade = int(args[1])
-    argumentos = args[2:]
-    pasta_atual = os.getcwd()
+    try:
+        nome_sprite = args[0]
+        quantidade = int(args[1])
+        argumentos = args[2:]
+        pasta_atual = os.getcwd()
 
-    for i in range(quantidade):
-        nome = argumentos[i * 3]
-        inicio = int(argumentos[i * 3 + 1])
-        fim = int(argumentos[i * 3 + 2])
-        mover_frames(nome, inicio, fim, pasta_atual)
-        print(f"[✓] {nome}: frames {inicio} até {fim} movidos para {nome}/")
+        for i in range(quantidade):
+            nome = argumentos[i * 3]
+            inicio = int(argumentos[i * 3 + 1])
+            fim = int(argumentos[i * 3 + 2])
+            mover_frames(nome, inicio, fim, pasta_atual)
+            print(f"[✓] {nome}: frames {inicio} até {fim} movidos para {nome}/")
 
-    criar_spritesheets(pasta_atual, nome_sprite)
+        criar_spritesheets(pasta_atual, nome_sprite)
+    except (IndexError, ValueError):
+        print("[X] Erro nos argumentos. Use 'art -help' para ver a sintaxe correta.")
 
 
 if __name__ == "__main__":
