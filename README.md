@@ -28,7 +28,7 @@ Com essa automação consegui diminuir o tempo gasto organizando e compactando a
 ## Requisitos 🛑:
 * **Python 3.x** instalado e configurado no PATH do sistema.
 * **ImageMagick** instalado ([https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php)) e o comando `magick` acessível no prompt.
-* O arquivo `art.bat` disponível (disponível na pasta `/scripts` do repositório).
+* O arquivo `art.bat` disponível (disponível no repositório).
 
 ---
 
