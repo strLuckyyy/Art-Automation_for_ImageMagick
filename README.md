@@ -86,7 +86,7 @@ magick --version
 ---
 
 ## Como Usar 🛠️
-Com a instalação feita, agora você pode rodar o comando `art` de qualquer pasta utilizando o terminal. Lembrando que você deve rodar o sistema na pasta que possui os frames para que rode tudo corretamente.
+Com a instalação feita, agora você pode rodar o comando `art` de qualquer pasta utilizando o terminal. Lembrando que você deve rodar o sistema na pasta que possui os frames/sprites para que ocorra tudo corretamente.
 
 Para informações e comandos, digite:
 ```bash
