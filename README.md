@@ -1,3 +1,5 @@
+# MagickArt - Automatic SpriteSheet Builder
+
 ## Objetivo 🎯
 Um utilitário em Python para facilitar a organização de sprites em subpastas e geraração de spritesheets otimizadas com o **ImageMagick** de forma automatizada. Foco para quem trabalha com animações 2D em jogos ou qualquer ferramenta visual que envolva muitos frames.
 
@@ -29,8 +31,8 @@ Porém o processo de organização e compactação das animações após renderi
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/strLuckyyy/Art-Automation_for_ImageMagick.git
-cd Art-Automation_for_ImageMagick
+git clone https://github.com/strLuckyyy/MagickArt-Automatic_SpriteSheet_Builder.git
+cd MagickArt-Automatic_SpriteSheet_Builder
 ```
 
 2. **Adicione a pasta clonada no PATH do Windows**
@@ -50,8 +52,8 @@ cd Art-Automation_for_ImageMagick
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/strLuckyyy/Art-Automation_for_ImageMagick.git
-cd Art-Automation_for_ImageMagick
+git clone https://github.com/strLuckyyy/MagickArt-Automatic_SpriteSheet_Builder.git
+cd MagickArt-Automatic_SpriteSheet_Builder
 ```
 
 2. **Dê permissão de execução ao script `art.sh`**
@@ -74,13 +76,6 @@ sudo ln -s $(pwd)/scripts/art.sh /usr/local/bin/art
 
 ```bash
 sudo cp scripts/art.sh /usr/local/bin/art
-```
-
-4. **Certifique-se de que o Python 3 e o ImageMagick estão instalados**
-
-```bash
-python3 --version
-magick --version
 ```
 
 ---
