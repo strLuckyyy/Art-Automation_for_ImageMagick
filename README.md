@@ -1,6 +1,8 @@
 
 # MagickArt - SpriteSheet Auto-Organizer 🗃️
 
+Projeto em pt-br na outra branch.
+
 ## Goal 🎯
 
 A Python utility to make it easier to organize sprites into subfolders and generate optimized spritesheets using **ImageMagick**, all automated. Focused on people working with 2D animations for games or any visual tool that involves a lot of frames.
