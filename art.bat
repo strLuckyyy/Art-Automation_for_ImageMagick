@@ -1,10 +1,10 @@
 @echo off
 setlocal ENABLEEXTENSIONS
-title MagickArt - Automatic SpriteSheet Builder
+title MagickArt - SpriteSheet Auto-Organizer
 
 echo.
 echo =========================================
-echo                MagickArt
+echo                 MagickArt
 echo =========================================
 echo.
 :: Pega o diretirio onde o .bat está localizado

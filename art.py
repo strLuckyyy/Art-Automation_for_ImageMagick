@@ -134,8 +134,8 @@ def organizar_e_zipar(pasta_zip, sprite_base=None, novo_nome=None):
 def exibir_ajuda():
     print("""\n\n
 =========================================
-               MagickArt
-      Automatic SpriteSheet Builder 
+                MagickArt
+       SpriteSheet  Auto-Organizer 
 =========================================
 
 Comandos disponíveis:

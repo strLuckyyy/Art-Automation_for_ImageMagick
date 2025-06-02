@@ -3,7 +3,8 @@
 
 echo
 echo "========================================="
-echo "               MagickArt"
+echo "                MagickArt                "
+echo "       SpriteSheet  Auto-Organizer       "
 echo "========================================="
 echo
 
