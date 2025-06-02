@@ -13,8 +13,8 @@ Um utilitário em Python para facilitar a organização de sprites em subpastas 
 
 ---
 ## Motivação 🤔
-Durante o desenvolvimento do jogo StarDusk em qual estou trabalhando atualmente, devido ao tempo para a conclusão do projeto eu decidi pesquisar alternativas mais "rápidas" para a criação das animações do jogo. 
-Depois de algumas pesquisas, decidi usar o **Blender** para as animações, utilizando a técnica de cut-out, renderizando e fazendo as spritesheet com a ajuda do **ImageMagick**. Porém o processo de organização e compactação das animações após renderizar estavam custando muito tempo, disso surgiu a idea de automatizar tudo para dar mais folego no projeto.
+Durante o desenvolvimento do jogo StarDusk, o qual estou trabalhando atualmente, tive problemas com a demanda x tempo para conclusão do projeto, pensando nisso eu decidi pesquisar alternativas mais "rápidas" para a criação das animações do jogo. Depois de procurar bastante, decidi usar o **Blender** para as animações, utilizando a técnica de cut-out, renderizando e fazendo as spritesheet com a ajuda do **ImageMagick**.
+Porém o processo de organização e compactação das animações após renderizar estavam custando muito tempo, disso surgiu a idea de automatizar tudo para dar mais folego no projeto.
 
 ---
 
@@ -42,26 +42,6 @@ cd Art-Automation_for_ImageMagick
 * Confirme tudo.
 
 3. **Reinicie o terminal ou o PowerShell para que a alteração no PATH tenha efeito.**
-
-### Uso
-
-Agora você pode rodar o comando `art` de qualquer pasta no terminal, seguindo o padrão:
-
-```bash
-art Nome NumeroDePastas nome1 inicio1 fim1 nome2 inicio2 fim2 ...
-```
-
-Exemplo:
-
-```bash
-art Player 2 walk 1 20 run 21 40
-```
-
-Para informações e mais comandos:
-
-```bash
-art -help
-```
 
 ---
 
@@ -105,25 +85,14 @@ magick --version
 
 ---
 
-### Uso
+## Como Usar 🛠️
+Com a instalação feita, agora você pode rodar o comando `art` de qualquer pasta utilizando o terminal. Lembrando que você deve rodar o sistema na pasta que possui os frames para que rode tudo corretamente.
 
-Agora é só usar o comando normalmente no terminal:
-
+Para informações e comandos, digite:
 ```bash
-art Nome NumeroDePastas nome1 inicio1 fim1 nome2 inicio2 fim2 ...
-```
-
-Exemplo:
-
-```bash
-art Player 2 walk 1 20 run 21 40
-```
-
-Para ver todos os comandos disponíveis:
-
-```bash
+art
+OU
 art -help
 ```
-
 ---
 
