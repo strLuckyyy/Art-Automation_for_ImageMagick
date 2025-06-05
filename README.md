@@ -36,7 +36,7 @@ With this automation, I managed to reduce the time spent organizing and compress
 
 * **Python 3.x** installed and set up in the system PATH.
 * **ImageMagick** installed ([https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php)) and the `magick` command working in the terminal.
-* The `art.bat` file available (inside this folder).
+* The `art.bat` or `art.sh` file available (inside this folder).
 
 ---
 
@@ -73,23 +73,7 @@ cd MagickArt-SpriteSheet_Auto-Organizer
 2. **Give execute permission to the `art.sh` script**
 
 ```bash
-chmod +x scripts/art.sh
-```
-
-3. **(Optional) Add the script to your PATH**
-
-To use `art` from anywhere, you can either create a symbolic link or move the script to a folder that’s already in your PATH:
-
-**Option 1 – Symbolic link (recommended):**
-
-```bash
-sudo ln -s $(pwd)/scripts/art.sh /usr/local/bin/art
-```
-
-**Option 2 – Move to `/usr/local/bin`:**
-
-```bash
-sudo cp scripts/art.sh /usr/local/bin/art
+chmod +x art.sh
 ```
 
 ---
